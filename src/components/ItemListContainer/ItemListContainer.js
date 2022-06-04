@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ItemListContainer = ({ image, title, price, stock, id }) => {
 
-  console.log("producto: ", id)
+  // console.log("producto: ", id)
 
 
 

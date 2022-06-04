@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ItemCount = ({stock}) => {
-
-    const [count, setCount] = useState(1);
+const ItemCount = ({amount, updateAmount, stock}) => {
 
     const addCount = () => {
-        if(count < stock) {
-            setCount(count + 1)
+        if(amount < stock) {
+            updateAmount(amount + 1)
         }
     }
 
     const removeCount = () => {
-        if(count > 1) {
-            setCount(count - 1)
+        if(amount > 1) {
+            updateAmount(amount - 1)
         }
     }
 
@@ -24,7 +22,7 @@ const ItemCount = ({stock}) => {
             <button className="btn btn-primary" onClick={removeCount}>-</button>
           </div>
           <div className="col-2">
-            <p>{count}</p>
+            <p>{amount}</p>
           </div>
           <div className="col-5">
             <button className="btn btn-primary" onClick={addCount}>+</button>
