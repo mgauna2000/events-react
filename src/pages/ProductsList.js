@@ -23,7 +23,7 @@ const ProductsList = () => {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             resolve(productsItems);
-          }, 2000);
+          }, 1000);
         });
       };
 
