@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
@@ -6,6 +7,7 @@ const ItemDetail = ({ data }) => {
   // max-width: 540px;
 
   const [amount, setAmount] = useState(1);
+  const [showButton, setShowButton] = useState(false);
 
   const onAdd = () => {
     console.log("prducto a agregar", data);
@@ -28,18 +30,22 @@ const ItemDetail = ({ data }) => {
             <p className="card-text">
               <small className="text-muted">$ {data.price}</small>
             </p>
-            <ItemCount
-              amount={amount}
-              updateAmount={setAmount}
-              stock={data.stock}
-            />
-            <button
-              type="button"
-              onClick={onAdd}
-              className="btn btn-dark btn-add"
-            >
-              Agregar al carrito
-            </button>
+            {!showButton ? (
+              <ItemCount
+                amount={amount}
+                updateAmount={setAmount}
+                setShowButton={setShowButton}
+                stock={data.stock}
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={onAdd}
+                className="btn btn-dark btn-add"
+              >
+                <Link to="/cart">Terminar mi compra</Link>
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ItemCount = ({amount, updateAmount, stock}) => {
+const ItemCount = ({amount, updateAmount, stock, setShowButton}) => {
 
     const addCount = () => {
         if(amount < stock) {
@@ -28,6 +28,13 @@ const ItemCount = ({amount, updateAmount, stock}) => {
             <button className="btn btn-primary" onClick={addCount}>+</button>
           </div>
         </div>
+        <button
+              type="button"
+              onClick={() => setShowButton(true)}
+              className="btn btn-dark btn-add"
+            >
+              Agregar al carrito
+            </button>
       </div>
     </>
   );

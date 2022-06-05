@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import "./ItemListContainer.css";
 import { Link } from "react-router-dom";
 
-const ItemListContainer = ({ image, title, price, stock, id }) => {
+const ItemListContainer = ({ image, title, price, id }) => {
 
   // console.log("producto: ", id)
 
