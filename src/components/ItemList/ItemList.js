@@ -7,9 +7,9 @@ const ItemList = ({ products }) => {
   return (
     <div className="container">
       <div className="row row-cols-1 row-cols-md-3 my-4 g-4 grid">
-        {products.map(({ title, price, image, stock, id, index }) => {
+        {products.map(({ title, price, image, stock, id }) => {
           return (
-            <div className="container" key={index}>
+            <div className="container" key={id}>
               <ItemListContainer
                 title={title}
                 price={price}

@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import productos from "../../utils/productos";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailContainer = () => {
 
   const { id } = useParams()
-
-  const navigate = useNavigate()
 
   const [product, setProduct] = useState({});
 
